@@ -1,0 +1,384 @@
+/* --- ZÁKLADNÉ NASTAVENIA A FARBY --- */
+:root {
+    --primarna-farba: #0D9488;
+    --sekundarna-farba: #F8F9FA;
+    --farba-textu: #1F2937;
+    --biela-farba: #ffffff;
+    --tien: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--farba-textu);
+    background-color: var(--biela-farba);
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primarna-farba);
+}
+
+section {
+    padding: 4rem 0;
+}
+
+/* --- HLAVIČKA --- */
+header {
+    background-color: var(--biela-farba);
+    color: var(--farba-textu);
+    padding: 1rem 0;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primarna-farba);
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+}
+
+header nav ul li {
+    margin-left: 1.5rem;
+}
+
+header nav a {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #003d6b;
+}
+
+/* --- ÚVODNÁ SEKCIA (HERO) --- */
+#hero {
+    background-color: var(--primarna-farba);
+    color: var(--biela-farba);
+    text-align: center;
+    padding: 6rem 0;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    color: var(--biela-farba);
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 1rem auto;
+}
+
+.button {
+    display: inline-block;
+    background-color: var(--primarna-farba);
+    color: var(--biela-farba);
+    padding: 0.8rem 2.5rem;
+    border: 2px solid var(--primarna-farba);
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--tien);
+}
+
+.button:hover {
+    background-color: transparent;
+    color: var(--primarna-farba);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* --- OSTATNÉ SEKCIE --- */
+#o-projekte {
+    background-color: var(--sekundarna-farba);
+    text-align: center;
+}
+
+#o-projekte p {
+    max-width: 800px;
+    margin: auto;
+}
+
+#tim {
+    background-color: var(--biela-farba);
+}
+
+#kontakt {
+    background-color: var(--sekundarna-farba);
+    text-align: center;
+}
+
+/* --- SEKCIA TÍM --- */
+.tim-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.clen-timu {
+    background: var(--biela-farba);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: var(--tien);
+    transition: transform 0.3s ease;
+}
+
+.clen-timu:hover {
+    transform: translateY(-5px);
+}
+
+.clen-timu img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primarna-farba);
+}
+
+.clen-timu h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.clen-timu .rola {
+    color: #777;
+    font-style: italic;
+}
+
+/* --- PÄTA --- */
+footer {
+    background-color: var(--farba-textu);
+    color: var(--biela-farba);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* --- RESPONZIVITA PRE MOBILNÉ ZARIADENIA --- */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    header .logo {
+        margin-bottom: 1rem;
+    }
+
+    header nav ul {
+        padding: 0;
+    }
+}
+/* --- DOPLNKOVÉ ŠTÝLY PRE VYLEPŠENIA --- */
+
+/* Vylepšenie zoznamu v sekcii "O projekte" */
+#o-projekte .emphasis {
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#o-projekte ul {
+    list-style: none;
+    padding-left: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#o-projekte li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+#o-projekte li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: -2px;
+    color: var(--primarna-farba);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+
+/* Podnadpisy pre rozdelenie tímu */
+.podnadpis-timu {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #555;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+/* Prvý podnadpis bude mať menšiu hornú medzeru */
+.podnadpis-timu:first-of-type {
+    margin-top: 1rem;
+}
+
+/* --- ŠTÝLY PRE PODSTRÁNKU PROJEKT.HTML --- */
+
+#project-details {
+    background-color: var(--biela-farba);
+    padding: 4rem 0;
+}
+
+/* Obal pre obsah, aby text nebol príliš široký */
+.page-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-content h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    color: var(--primarna-farba);
+    margin-bottom: 3rem;
+}
+
+.page-content h2 {
+    font-size: 2rem;
+    text-align: left;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--sekundarna-farba);
+    padding-bottom: 0.5rem;
+}
+
+.page-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.page-content .slogan {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 4rem;
+    font-weight: bold;
+    font-style: italic;
+    color: var(--farba-textu);
+}
+
+/* Štýl pre logo, aby bolo klikateľné */
+.logo-link {
+    text-decoration: none;
+}
+/* --- ŠTÝLY PRE STRÁNKU S DOKUMENTAMI --- */
+
+#dokumenty {
+    background-color: var(--sekundarna-farba);
+}
+
+.document-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+}
+
+.document-list li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.document-list li:hover {
+    transform: translateX(5px);
+    border-left: 5px solid var(--primarna-farba);
+    box-shadow: var(--tien);
+}
+
+.document-list a {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: var(--farba-textu);
+    font-weight: bold;
+    position: relative;
+    padding-left: 45px;
+}
+
+/* Ikona súboru pred odkazom */
+.document-list a::before {
+    content: '📄';
+    font-size: 1.5rem;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Rozlíšenie ikon podľa typu súboru (voliteľné, ale pekné) */
+.document-list a[href$=".pdf"]::before { content: '📕'; } /* Pre PDF */
+.document-list a[href$=".docx"]::before { content: '📄'; } /* Pre Word */
+.document-list a[href$=".pptx"]::before { content: '💻'; } /* Pre PowerPoint */
+
+/* --- FINÁLNE PRAVIDLÁ PRE ZAROVNANIE TEXTOV --- */
+
+/* 1. Dlhé texty na podstránkach (projekt.html) budú zarovnané DO BLOKU */
+.page-content p {
+    text-align: justify;
+}
+
+/* 2. Krátky text v sekcii "O našom projekte" na hlavnej stránke (index.html) bude NA STRED */
+#o-projekte p {
+    text-align: center;
+}
+
+/* 3. Slogan "No pain, no GAIN" zostane vždy NA STRED */
+.page-content .slogan {
+    text-align: center;
+}
